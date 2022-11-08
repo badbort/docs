@@ -27,4 +27,18 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 ```
 
-Not use of `ARM_USE_OIDC` and `permissions.id-token`. Those are necessary.
+Note use of `ARM_USE_OIDC` and `permissions.id-token` are necessary.
+
+The three secrets are also non-sensitive.
+
+`client-id` is assigned to the azure application (client) id found in the application overview
+`tenant-id` can also be found in the application overview
+
+If you just created an application and service principle you'll also need to provide it with access to your subscription to manage resources. Otherwise you will get the following error:
+```
+Error: : No subscriptions found for ***.
+
+Error: Az CLI Login failed. Please check the credentials and make sure az is installed on the runner. For more information refer https://aka.ms/create-secrets-for-GitHub-workflows
+```
+
+For simplicity you can add the `Contributor` role to your service principle on your subscription. This is done within `Access control (IAM)` in the sub blade.
