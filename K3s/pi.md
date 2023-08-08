@@ -12,9 +12,15 @@ Just dumping things I've had to use
 | List Services | `sudo systemctl --all --type=service `
 
 
-#### k3s agent logs: 
+#### k3s: 
+Get service logs
 ```
 sudo journalctl -u k3s-agent.service
+```
+
+Uninstall
+```
+/usr/local/bin/k3s-uninstall.sh
 ```
 
 #### Route PC port to wsl2 port for accessing k3s:
