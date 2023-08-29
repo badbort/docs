@@ -8,4 +8,8 @@ Camera: https://www.aliexpress.com/item/1005003528445506.html
 > POE Waterproof IMX335 IMX307 2MP 4MP 5MP 8MP 4K IPC Network Camera Outdoor IP67 Bus CAR IP CAMERA 940nm IR Cut Night Vision P2P
 > DC12V 2A/POE (The package does not provide a power adapter)
 
-### Streaming with VLC
+### Streaming
+
+```
+ffplay -fflags nobuffer+fastseek+flush_packets -sync ext -flags low_delay -framedrop -i -rtsp_transport tcp rtsp://admin:password@192.168.1.157 -an -x 1280 -y 720 -strict experimental -vf setpts=0
+```
