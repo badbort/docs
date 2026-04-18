@@ -33,3 +33,8 @@ To get started with a new pulumi infra repo I have to do the following:
 - Run `pulumi stack init main --secrets-provider azurekeyvault://kv-badbort-pulumi-pw.vault.azure.net/keys/<key>`. You, and the CICD identity need `Key Vaults Crypto User`
 - Commit and push the new stack file. e.g. Pulumi.main.yaml`.
 - This will allow the pulumi action to succeed.
+
+
+See also: https://www.pulumi.com/registry/packages/azure-native/installation-configuration/#service-principal-authentication
+
+For azure-native package, you need ARM_CLIENT_ID, ARM_TENANT_ID, ARM_SUBSCRIPTION_ID for oidc login (using federated creds)
